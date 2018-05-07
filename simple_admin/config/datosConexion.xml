@@ -1,0 +1,8 @@
+<database>
+	<mysql>
+		<host>localhost</host>
+		<database>id5299419_simple_admin</database>
+		<user>id5299419_jarias</user>
+		<password>php123</password>
+	</mysql>
+</database>

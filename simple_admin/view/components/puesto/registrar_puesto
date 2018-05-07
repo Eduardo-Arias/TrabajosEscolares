@@ -1,0 +1,29 @@
+<?php
+	include_once '../model/puestoDaoImp.php';
+	include_once 'layout_header.php';
+
+	$pue = new PuestoDaoImp();
+	$page_title = "Registro de proyectos";
+	include_once 'layout_header.php'; 	
+
+	include_once 'forms/form_puesto.php';
+?>
+<?php 
+	//Vía método POST
+	if($_POST){
+		// llena los objetos $usuario con los parametros enviados
+		$pue->setCvePuesto($_POST['cve_puesto']);
+		$pue->setDescPuesto($_POST['desc_puesto']);
+
+		// General la insercion del dato
+		// Notifica la respuesta valida o invalida
+		if($pro ->insert()){
+			echo "<div class='alert alert-success'><h1></h1>Guardado</div>";
+		}else {
+			echo "<div class='alert alert-danger'><h1></h1>Error</div>";
+		} // end if endidad -> insert
+	}// end if post
+?>
+<?php
+	include_once 'layout_footer.php';
+?>
